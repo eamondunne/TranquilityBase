@@ -1,0 +1,96 @@
+<html>
+
+<head>
+    <title>tranquility base</title>
+    <script src="http://www.x3dom.org/download/1.5/x3dom-full.js"></script>
+    <link rel="stylesheet" href="http://www.x3dom.org/download/1.5/x3dom.css">
+    <style>
+        .center {
+            margin: auto;
+            width: 60%;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body style="background-color:#AB9C89">
+    <div class="center">
+        <button onclick="document.getElementById('main').setAttribute('set_bind','true');">Main View </button>
+        <button onclick="document.getElementById('topdown').setAttribute('set_bind','true');">Topdown </button>
+        <x3d width='600px' height='600px'>
+
+            <Scene>
+                    <NavigationInfo id="head" headlight='true' type='"EXAMINE"'>  </NavigationInfo> 
+                <Viewpoint id="main" position="505.30733 476.05449 865.21938" orientation="-0.94673 0.29499 0.12916 0.67196"></Viewpoint>
+                <Viewpoint id="topdown" position="373.49503 1002.41767 293.64643" orientation="-0.98793 0.11096 0.10809 1.41536"></Viewpoint>
+                <Background skyColor='(0,0,0)'></Background>
+                <!-- 
+        TRANQUILITY BASE BASEPLATE
+        -->
+                <Group DEF='Base'>
+                    <Shape>
+                        <Appearance>
+                            <Material diffuseColor='0.67,0.61,0.53' />
+                        </Appearance>
+                        <Extrusion crossSection='0 118, 60 0, 404 138, 529 26, 661 26, 657 218, 532 373, 296 362, 283 393, 97 300'
+                            spine='0 0 0, 0 5 0' begincap='TRUE' endcap='TRUE' />
+                    </Shape>
+                </Group>
+                <Transform translation="0 5 0">
+                    <Shape USE="Base" />
+                </Transform>
+
+                <!-- 
+                Left Tower
+                -->
+                <Group DEF='LeftTower'>
+                    <Transform translation="0 10 0">
+                        <Shape>
+                            <Appearance>
+                                <Material diffuseColor='0.67,0.61,0.53' />
+                            </Appearance>
+                            <Extrusion crossSection='69 21, 22 120, 114 288, 276 372, 331 264, 279 103' spine='0 0 0, 0 2 0' />
+                        </Shape>
+                    </Transform>
+                </Group>
+                <!-- Left Tower Layers -->
+                <Transform translation="0 10 0">
+                    <Shape USE="LeftTower" />
+                </Transform>
+                <Transform translation="0 20 0">
+                    <Shape USE="LeftTower" />
+                </Transform>
+                <Transform translation="0 30 0">
+                    <Shape USE="LeftTower" />
+                </Transform>
+                <Transform translation="0 40 0">
+                    <Shape USE="LeftTower" />
+                </Transform>
+
+                <!-- 
+                    Left Tower Rotator
+                -->
+                <Group DEF='LeftTowerRotator'>
+                    <Transform translation="-50 62 -50">
+                        <Shape>
+                            <Appearance>
+                                <Material diffuseColor='0.67,0.61,0.53' />
+                            </Appearance>
+                            <Extrusion crossSection='280 166, 460 187, 463 221, 417 261, 222 283, 193 241' spine='0 0 0, 0 2 0' />
+                        </Shape>
+                    </Transform>
+                </Group>
+                <Transform translation="13 10 13" scale="0.95 0.95 0.95">
+                    <Shape USE="LeftTowerRotator" />
+                </Transform>
+
+
+
+            </Scene>
+        </x3d>
+
+    </div>
+
+</body>
+
+</html>

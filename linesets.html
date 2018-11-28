@@ -1,0 +1,220 @@
+<html>
+
+<head>
+    <title>Tranquility Base</title>
+    <script src="https://www.x3dom.org/download/1.5/x3dom-full.js"></script>
+    <link rel="stylesheet" href="https://www.x3dom.org/download/1.5/x3dom.css"></link>
+    <style>
+        .center {
+            margin: auto;
+            width: 60%;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body style="background-color:#AB9C89">
+        <button onclick="document.getElementById('main').setAttribute('set_bind','true');">Main View </button>
+        <button onclick="document.getElementById('topdown').setAttribute('set_bind','true');">Topdown </button>
+        <button onclick="document.getElementById('side').setAttribute('set_bind','true');">Side </button>
+        <x3d width='1200px' height='650px'>
+            <scene>
+                <!-- 
+                    VIEWS
+                 -->
+                <!-- Main View -->
+
+                <Viewpoint id="main" position="462.75549 314.13093 652.20061" orientation="-0.94673 0.29499 0.12916 0.67196" description=""></Viewpoint>
+                <!-- Topdown View -->
+                <Viewpoint id="topdown" position="271.68230 1152.09538 281.61002" orientation="-0.98809 0.05971 0.14181 1.53320"
+                    description=""></Viewpoint>
+                    <!-- Side View -->
+                <Viewpoint id="side" position="330.50000 35.40000 1383.41644" orientation="0.00000 0.00000 0.00000 0.00000" 
+	            description=""></Viewpoint>
+                <!-- Paint the background black -->
+                <Background skyColor='(0,0,0)'></Background>
+                <NavigationInfo id="head" headlight='true' type='"EXAMINE"'> </NavigationInfo>
+
+                <!-- 
+                TRANQUILITY BASE BASEPLATE
+                -->
+                </box>
+                <Group DEF='Base'>
+                    <Shape>
+                        <Appearance>
+                            <Material emissiveColor='0.67,0.61,0.53' />
+                        </Appearance>
+                        <IndexedLineSet coordIndex='0 1 2 3 4 5 6 7 8 9 0
+                        10 11 12 13 14 15 16 17 18 19
+                        10 0 1 11 12 2 3 13 14 4 5 15 16 6 7 17 18 8 9 19'>
+                            <Coordinate point='0 0 118, 60 0 0, 404 0 138, 529 0 26, 
+                    661 0 26, 657 0 218, 532 0 373, 296 0 362, 283 0 393, 97 0 300,
+                    0 6 118, 60 6 0, 404 6 138, 529 6 26, 661 6 26, 657 6 218, 532 6 373, 296 6 362, 
+                    283 6 393, 97 6 300' />
+                        </IndexedLineSet>
+                    </Shape>
+                </Group>
+                <Transform translation="0 5 0">
+                    <Shape USE="Base" />
+                </Transform>
+
+                <!-- 
+                Left Tower
+                -->
+                <Group DEF='LeftTower'>
+                    <Transform translation="0 12 0">
+                        <Shape>
+                            <Appearance>
+                                <Material emissiveColor='0.67,0.61,0.53' />
+                            </Appearance>
+                            <IndexedLineSet coordIndex='0 1 2 3 4 5 0
+                        6 7 8 9 10 11 
+                        6 7 1 2 8 9 3 4 10 11 5'>
+                                <Coordinate point='69 0 21, 22 0 120, 114 0 288, 276 0 372, 331 0 264, 279 0 103
+                            69 2 21, 22 2 120, 114 2 288, 276 2 372, 331 2 264, 279 2 103' />
+                            </IndexedLineSet>
+
+                        </Shape>
+                    </Transform>
+                </Group>
+                <!-- Left Tower Layers -->
+                <Transform translation="0 10 0">
+                    <Shape USE="LeftTower" />
+                </Transform>
+                <Transform translation="0 20 0">
+                    <Shape USE="LeftTower" />
+                </Transform>
+                <Transform translation="0 30 0">
+                    <Shape USE="LeftTower" />
+                </Transform>
+                <Transform translation="0 40 0">
+                    <Shape USE="LeftTower" />
+                </Transform>
+
+                <!-- 
+                    Left Tower Rotator
+                -->
+                <Group DEF='LeftTowerRotator'>
+                    <Transform translation="-50 62 -50">
+                        <Shape>
+                            <Appearance>
+                                <Material emissiveColor='0.67,0.61,0.53' />
+                            </Appearance>
+                            <IndexedLineSet coordIndex='0 1 2 3 4 5 0
+                            6 7 8 9 10 11 
+                            6 7 1 2 8 9 3 4 10 11 5'>
+                                <Coordinate point='280 0 166, 460 0 187, 463 0 221, 417 0 261, 222 0 283, 193 0 241
+                                    280 2 166, 460 2 187, 463 2 221, 417 2 261, 222 2 283, 193 2 241' />
+                            </IndexedLineSet>
+
+                        </Shape>
+                    </Transform>
+                </Group>
+                <Transform translation="13 10 13" scale="0.95 0.95 0.95">
+                    <Shape USE="LeftTowerRotator" />
+                </Transform>
+
+                <!-- 
+                Right Tower
+                -->
+                <Group DEF='RightTower'>
+                    <Transform translation="-50 12 -50">
+                        <!-- Main Building -->
+                        <Shape>
+                            <Appearance>
+                                <Material emissiveColor='0.67,0.61,0.53' />
+                            </Appearance>
+                            <IndexedLineSet coordIndex='0 1 2 3 4 5 0
+                        6 7 8 9 10 11 
+                        6 7 1 2 8 9 3 4 10 11 5'>
+                                <Coordinate point='456 0 205, 581 0 86, 703 0 86, 698 0 265, 574 0 413, 473 0 404
+                            456 2 205, 581 2 86, 703 2 86, 698 2 265, 574 2 413, 473 2 404' />
+                            </IndexedLineSet>
+                        </Shape>
+                        <!-- Sign Hole -->
+                        <Shape>
+                            <Appearance>
+                                <Material emissiveColor='0.67,0.61,0.53' />
+                            </Appearance>
+                            <IndexedLineSet coordIndex='0 1 2 3 4 5 0
+                            6 7 8 9 10 11 
+                        6 7 1 2 8 9 3 4 10 11 5'>
+                                <Coordinate point='535 0 159, 553 0 144, 561 0 148, 562 0 172, 544 0 187, 536 0 184
+                                535 2 159, 553 2 144, 561 2 148, 562 2 172, 544 2 187, 536 2 184' />
+                            </IndexedLineSet>
+                        </Shape>
+                        <!-- Big Hole -->
+                        <Shape>
+                            <Appearance>
+                                <Material emissiveColor='0.67,0.61,0.53' />
+                            </Appearance>
+                            <IndexedLineSet coordIndex='0 1 2 3 4 5 0
+                                6 7 8 9 10 11 
+                            6 7 1 2 8 9 3 4 10 11 5'>
+                                <Coordinate point='507 0 291, 625 0 185, 648 0 196, 648 0 252, 545 0 376, 511 0 377
+                                507 2 291, 625 2 185, 648 2 196, 648 2 252, 545 2 376, 511 2 377' />
+                            </IndexedLineSet>
+                        </Shape>
+                    </Transform>
+                </Group>
+
+                <!-- Right Tower Layers -->
+                <Transform translation="0 10 0">
+                    <Shape USE="RightTower" />
+                </Transform>
+                <Transform translation="0 20 0">
+                    <Shape USE="RightTower" />
+                </Transform>
+                <Transform translation="0 30 0">
+                    <Shape USE="RightTower" />
+                </Transform>
+
+                <!-- 
+                    Right Tower Top
+                 -->
+                <Group DEF='RightTowerTop'>
+                    
+                    <Transform translation="-50 52 -50">
+                            <Transform DEF='RightTowerTopAnimation'>
+                        <!-- Main Building -->
+                        <Shape>
+                            <Appearance>
+                                <Material emissiveColor='0.67,0.61,0.53' />
+                            </Appearance>
+                            <IndexedLineSet coordIndex='0 1 2 3 4 5 0
+                                6 7 8 9 10 11 
+                            6 7 1 2 8 9 3 4 10 11 5'>
+                                <Coordinate point='481 0 281, 619 0 153, 672 0 181, 673 0 259, 552 0 397, 489 0 394
+                                    481 2 281, 619 2 153, 672 2 181, 673 2 259, 552 2 397, 489 2 394' />
+                            </IndexedLineSet>
+                        </Shape>
+                        <!-- Hole -->
+                        <Shape>
+                            <Appearance>
+                                <Material emissiveColor='0.67,0.61,0.53' />
+                            </Appearance>
+                            <IndexedLineSet coordIndex='0 1 2 3 4 5 0
+                                    6 7 8 9 10 11 
+                                6 7 1 2 8 9 3 4 10 11 5'>
+                                <Coordinate point='507 0 291, 625 0 185, 648 0 196, 648 0 252, 545 0 376, 511 0 377
+                                    507 2 291, 625 2 185, 648 2 196, 648 2 252, 545 2 376, 511 2 377' />
+                            </IndexedLineSet>
+                        </Shape>
+                    </Transform>
+                </Transform>
+                </Group>
+                <Transform translation="0 10 0">
+                    <Shape USE="RightTowerTop" />
+                </Transform>
+
+                <!-- <timeSensor DEF='clock' cycleInterval='2' loop='true'></timeSensor>
+                <OrientationInterpolator DEF='spin' key='0 .25 .5 .75 1' keyValue='0 1 0 0  0 1 0 1.57079  0 1 0 3.14159  0 1 0 4.71239  0 1 0 6 '/>
+<Route fromNode="clock" fromField="fraction_changed" toNode="spin" toField="set_fraction"> </Route>
+                <Route fromNode="spin" fromField="value_changed" toNode="RightTowerTopAnimation" toField="set_rotation"> -->
+
+            </scene>
+        </x3d>
+
+</body>
+
+</html>

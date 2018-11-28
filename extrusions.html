@@ -1,7 +1,7 @@
 <html>
 
 <head>
-    <title>tranquility base</title>
+    <title>Tranquility Base</title>
     <script src="https://www.x3dom.org/download/1.5/x3dom-full.js"></script>
     <link rel="stylesheet" href="https://www.x3dom.org/download/1.5/x3dom.css">
     <style>
@@ -16,8 +16,8 @@
 <body style="background-color:#AB9C89">
         <button onclick="document.getElementById('main').setAttribute('set_bind','true');">Main View </button>
         <button onclick="document.getElementById('topdown').setAttribute('set_bind','true');">Topdown </button>
+        
         <x3d width='1200px' height='650px'>
-
             <Scene>
                 <NavigationInfo id="head" headlight='true' type='"EXAMINE"'> </NavigationInfo>
                 <Viewpoint id="main" position="505.30733 476.05449 865.21938" orientation="-0.94673 0.29499 0.12916 0.67196"></Viewpoint>
@@ -29,7 +29,7 @@
                 <Group DEF='Base'>
                     <Shape>
                         <Appearance>
-                            <Material diffuseColor='0.67,0.61,0.53' />
+                            <Material diffuseColor='0.67,0.61,0.53' emissiveColor='0.1, 0.1 0.1'/>
                         </Appearance>
                         <Extrusion crossSection='0 118, 60 0, 404 138, 529 26, 661 26, 657 218, 532 373, 296 362, 283 393, 97 300'
                             spine='0 0 0, 0 5 0' begincap='TRUE' endcap='TRUE' />
@@ -90,42 +90,23 @@
                         <!-- Main Building -->
                         <Shape>
                             <Appearance>
-                                <Material diffuseColor='1 1 1' />
+                                <Material diffuseColor='0.67,0.61,0.53' />
                             </Appearance>
                             <Extrusion crossSection='455 205, 516 149, 535 161, 534 187, 542 190, 562 172, 
                             561 148, 554 146, 535 161, 516 149, 581 86, 703 88, 697 267, 648 251, 649 199,
-                            625 186, 508 294, 511 375, 544 378, 648 251, 697 267, 575 416, 469 407, 455 205' spine='0 0 0, 0 2 0'/>
-
-                            <!-- <Extrusion crossSection='456 205, 581 86, 703 86, 698 265, 574 413, 473 404,
-                            535 159, 553 144, 561 148, 562 172, 544 187, 536 184, 535 138, 473 404' spine='0 0 0, 0 2 0' /> -->
-                        </Shape>
-                        <!-- Sign Hole -->
-                        <Shape>
-                            <Appearance>
-                                <Material diffuseColor='0.67,0.61,0.53' />
-                            </Appearance>
-                            <IndexedLineSet coordIndex='0 1 2 3 4 5 0
-                            6 7 8 9 10 11 
-                        6 7 1 2 8 9 3 4 10 11 5'>
-                                <Coordinate point='535 0 159, 553 0 144, 561 0 148, 562 0 172, 544 0 187, 536 0 184
-                                535 2 159, 553 2 144, 561 2 148, 562 2 172, 544 2 187, 536 2 184' />
-                            </IndexedLineSet>
-                        </Shape>
-                        <!-- Big Hole -->
-                        <Shape>
-                            <Appearance>
-                                <Material diffuseColor='0.67,0.61,0.53' />
-                            </Appearance>
-                            <IndexedLineSet coordIndex='0 1 2 3 4 5 0
-                                6 7 8 9 10 11 
-                            6 7 1 2 8 9 3 4 10 11 5'>
-                                <Coordinate point='507 0 291, 625 0 185, 648 0 196, 648 0 252, 545 0 376, 511 0 377
-                                507 2 291, 625 2 185, 648 2 196, 648 2 252, 545 2 376, 511 2 377' />
-                            </IndexedLineSet>
-                        </Shape>
+                            625 186, 508 294, 511 375, 544 378, 648 251, 697 267, 575 416, 469 407' spine='0 0 0, 0 2 0'/>
                     </Transform>
                 </Group>
-
+                <!-- Right Tower Layers -->
+                <Transform translation="0 10 0">
+                    <Shape USE="RightTower" />
+                </Transform>
+                <Transform translation="0 20 0">
+                    <Shape USE="RightTower" />
+                </Transform>
+                <Transform translation="0 30 0">
+                    <Shape USE="RightTower" />
+                </Transform>
 
 
             </Scene>
